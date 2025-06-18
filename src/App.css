@@ -1,0 +1,674 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.15.4/js/all.js');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.3s, color 0.3s;
+    color: white;
+    width: 90%;
+    margin: auto;
+    max-width: 1400px;
+  }
+
+ /* ............................................Dark & Light.................................................... */
+
+  body.light {
+  background: #ffffff;
+  color:#000000;
+}
+
+body.dark {
+  background: linear-gradient(to bottom, #0a0f2c, #113c57);
+  color: white;
+}
+
+
+body.light .btn.primary {
+  background-color: #007BFF;
+  color: #ffffff;
+}
+
+body.dark .btn.primary {
+  background-color: #00bfff;
+  color: #ffffff;
+}
+
+body.light .btn.secondary {
+  background-color: transparent;
+  color: #007BFF;
+  border: 2px solid #007BFF;
+}
+
+body.dark .btn.secondary {
+  background-color: transparent;
+  color: #00bfff;
+  border: 2px solid #00bfff;
+}
+
+body {
+  &.light {
+    --bg: white;
+    --text: black;
+    --btn-bg: #007BFF;
+  }
+
+  &.dark {
+    --bg: #0a0f2c;
+    --text: white;
+    --btn-bg: #00bfff;
+  }
+}
+
+.Dark-Light {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Light mode settings for nav and hero */
+body.light nav,
+body.light .nav-links a,
+body.light .hero,
+body.light .hero-text h1,
+body.light .hero-text h4,
+body.light .about-section h4 
+{
+  color: #000000;
+}
+
+/* DARK MODE: Social icons white */
+body.dark .icon {
+  color: white;
+  border: 1px solid #00bfff;
+}
+
+/* LIGHT MODE: Social icons dark */
+body.light .icon {
+  color: #000; /* or use #333 or brand color */
+  border: 1px solid #007BFF;
+}
+
+body.light .icon:hover {
+  background-color: #007BFF;
+  color: white;
+}
+
+body.dark .icon:hover {
+  background-color: #00bfff;
+  color: white;
+}
+
+/* Dark Mode */
+body.dark .btn.secondary {
+  background-color: transparent;
+  color: #00bfff;
+  border: 2px solid #00bfff;
+}
+
+body.dark .btn.secondary:hover {
+  background-color: #00bfff;
+  color: white;
+}
+
+/* Light Mode */
+body.light .btn.secondary {
+  background-color: transparent;
+  color: #007BFF;
+  border: 2px solid #007BFF;
+}
+
+body.light .btn.secondary:hover {
+  background-color: #007BFF;
+  color: white;
+}
+
+/* ....................................................Color Animation ...........................................   */
+/* {I'm Chandan} */
+.animated-name span {
+  opacity: 0;
+  display: inline-block;
+  animation: letterFade 0.5s forwards, colorChange 5s infinite;
+}
+
+@keyframes letterFade {
+  0%   { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes colorChange {
+  0%   { color: #00bfff; }
+  25%  { color: #ff6f61; }
+  50%  { color: #28a745; }
+  75%  { color: #ffc107; }
+  100% { color: #00bfff; }
+  
+}
+
+/* Delay each letter */
+.animated-name span:nth-child(1) { animation-delay: 0.2s; }
+.animated-name span:nth-child(2) { animation-delay: 0.4s; }
+.animated-name span:nth-child(3) { animation-delay: 0.6s; }
+.animated-name span:nth-child(4) { animation-delay: 0.8s; }
+.animated-name span:nth-child(5) { animation-delay: 1.0s; }
+.animated-name span:nth-child(6) { animation-delay: 1.2s; }
+.animated-name span:nth-child(7) { animation-delay: 1.4s; }
+.animated-name span:nth-child(8) { animation-delay: 1.6s; }
+.animated-name span:nth-child(9) { animation-delay: 1.8s; }
+.animated-name span:nth-child(10) { animation-delay: 2.0s; }
+
+/* {Frontend developer } */
+#role{
+font-weight: 'bold';
+font-size: '1.5em';
+transition: 'opacity 0.5s ease, color 0.5s ease'
+}
+
+  /* ............................................Header.................................................... */
+
+
+  .header {
+    padding: 20px 0;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  }
+  
+  .logo {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .image-logo{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 3px solid #0d62a8;
+  
+  }
+ .theme-toggle{
+  margin-right: auto;
+  padding: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  
+
+ }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    transition: color 0.3s, 
+
+  }
+  
+  .nav-links li a:hover {
+    color: #00bfff;
+    border-bottom: 2px solid #4e54c8;
+  }
+  
+/* ............................................Poster.................................................... */
+
+
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0;
+    flex-wrap: wrap;
+  }
+  
+  .hero-text {
+    max-width: 600px;
+  }
+  
+  .hero-text h1 {
+    color: #ffff;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .hero-text h2 {
+    color: #00aaff;
+    /* margin-bottom: 8px; */
+  }
+  
+  .hero-text h4 {
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #cfd3dc;
+  }
+  
+  .buttons {
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  /* transition: background 0.3s; */
+}
+
+.btn.primary {
+  background: #00bfff;
+  color: #fff;
+}
+
+.btn.secondary {
+  border: 2px solid #00bfff;
+  background-color: #00bfff;
+  color: #fff;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn.secondary:hover {
+  background: #0c96c4;
+  color: #fff;
+}
+
+  
+.social-icons .icon {
+    margin-top: 30px;
+    margin-right: 20px;
+    font-size: 20px;
+    color: white;
+    border: 1px solid #00bfff;
+    padding: 20px;
+    border-radius: 50%;
+    transition: background 0.3s;
+  }
+  
+  .social-icons .icon:hover {
+    background: #00bfff;
+  } 
+  
+  .hero-img img {
+    max-width: 350px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,191,255,0.4);
+  }
+
+/* ............................................About.................................................... */
+
+ .highlight{
+  color: #00bfff;
+
+}
+.about-container h1{
+  text-align: center;
+  font-size: 2.5rem;
+}
+.landing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  min-height: 100vh;
+  gap: 40px;
+  flex-wrap: wrap; /* for responsiveness */
+}
+
+/* Image container */
+.image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.image img {
+  width: 100%;
+  max-width: 420px;
+  animation: float 3s ease-in-out infinite;
+  border-radius: 50px;
+}
+
+/* Content container */
+.content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.content h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.content h4 {
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Floating animation for the image */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ............................................Project.................................................... */
+
+.Project-container{
+font-family: Arial, Helvetica, sans-serif;
+ text-align: center;
+
+}
+
+.portfolio {
+  padding: 40px 20px;
+  margin: auto;
+}
+
+.portfolio h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.portfolio h1 span {
+  color: #00bfff;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  justify-content: center;
+}
+
+.project-card {
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  width: 600px;
+  overflow: hidden;
+  padding: 10px;
+  text-align: center;
+}
+
+.project-card img {
+  width: 100%;
+  height: 60%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.project-card h2 {
+  margin: 10px;
+  color: #00aaff;
+}
+
+.project-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.stack span {
+  display: inline-block;
+  margin: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 1.1rem;
+
+}
+
+.projectbtn {
+  margin-top: 25px;
+}
+
+
+/* ............................................Contact us.................................................... */
+
+.main-heading h1{
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 30px;  
+  margin-bottom: 40px;
+  /* color: #003366; */
+}
+
+.contact-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;  
+}
+.image-section{
+  flex: 1;
+  min-width: 300px;
+  max-width: 50%;
+}
+
+.image-section img {
+  width: 95%;
+  height: 80%;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,191,255,0.4);
+}
+
+.form-section {
+  flex: 1;
+  min-width: 300px;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.form-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #00aaff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.form-row {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+  .full-width {
+    width: 100%;
+  }
+
+input, select, textarea {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.contactbtn{
+  margin-top: 15px;
+  align-self: flex-end;
+}
+
+label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+
+.contact-section {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.contact-card {
+  text-align: center;
+  /* margin: 20px 0; */
+}
+
+
+.divider-container {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.divider-line {
+  height: 2px;
+  background-color: white;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+}
+
+.divider-text {
+  background-color: #000;
+  padding: 0 15px;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.divider-text span{
+  color: #00aaff;
+}
+.divider-text span:hover{
+  text-decoration: underline; 
+ text-decoration-color: white;
+}
+
+
+
+/* ================== Responsive Design: Media Queries ================== */
+
+/* Extra small devices (phones, less than 576px) */
+@media only screen and (max-width: 575.98px) {
+  .hero, .landing, .contact-container, .projects-container {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .hero-img img,
+  .image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .buttons .contactbtn {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .image-section, .form-section {
+    max-width: 100%;
+  }
+
+  .divider-text {
+    font-size: 0.9rem;
+  }
+
+  .content h1 {
+    font-size: 32px;
+  }
+
+  .hero-text h1 {
+    font-size: 36px;
+  }
+}
+
+/* Small devices (phones in landscape and small tablets, 576px and up) */
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+
+  .hero,
+  .landing,
+  .contact-container {
+    flex-direction: column;
+    padding: 30px;
+    gap: 30px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  .hero-text h1,
+  .content h1 {
+    font-size: 40px;
+  }
+
+  .project-card {
+    width: 90%;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+/* Large devices (desktops, 992px and up) — optional if you want adjustments */
+@media only screen and (min-width: 992px) {
+  /* You can customize large desktop styles here if needed */
+}
