@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 # Getting Started with Create React App
 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -73,3 +74,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # my-portfolio
 My first personal portfolio website built with HTML, CSS, and JavaScript.
 >>>>>>> 26c40c03baeb795eb874364854bea91f7599664c
+
+
+![image alt](https://github.com/Chandan734/my-portfolio/blob/f49502f8fc28de647b3f77fab86950416292b893/Webone.jpg)
+
+
