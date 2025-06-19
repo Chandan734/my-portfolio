@@ -44,7 +44,7 @@ export default function Poster() {
           <h4>A dedicated and aspiring Software Development Engineer with an objective of working in an organization that provides opportunities for technical and personal advancement.</h4>
           <div class="buttons">
             <a href="mailto:cp028443@gmail.com?subject=Let's%20Talk&body=Hi%20Chandan%2C%0AI'd%20like%20to%20connect%20with%20you" class="btn primary">Let's Talk</a>
-            <a href="https://docs.google.com/document/d/1dcK82TEwb1jqMOGdb3lXrUahK54dmFBe/edit?usp=drivesdk&ouid=114056573075144787504&rtpof=true&sd=true" 
+            <a href="https://drive.google.com/file/d/15hPILTb9WqlsiXr3EMZVfzp4NKSLGrdN/view?usp=drivesdk" 
             class="btn secondary" download target="_blank">Download CV</a>
 
           </div>
