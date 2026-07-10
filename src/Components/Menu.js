@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-import About from './About'
-import Project from './Project'
-import Contact from './Contact'
-import Header from './Header'
-import Poster from './Poster'
-
+import About from './About';
+import Project from './Project';
+import Contact from './Contact';
+import Poster from './Poster';
 
 function Menu() {
   return (
@@ -13,9 +11,9 @@ function Menu() {
       <Poster />
       <About />
       <Project />
-      <Contact/>
+      <Contact />
     </>
-  )
+  );
 }
 
-export default Menu
+export default Menu;
