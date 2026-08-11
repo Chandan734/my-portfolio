@@ -1,56 +1,136 @@
-import React, { useState, useEffect } from 'react'
-import myPhoto from'./Image/me.jpg'
+import React, { useEffect, useState } from 'react'
+import myPhoto from './Image/Me.....jpeg'
 
+const roles = [
+  'Roblox Developer',
+  'Game Developer',
+  'Luau Scripter',
+  'Frontend Developer'
+]
+
+const colors = [
+  '#FF6B6B',
+  '#4ECDC4',
+  '#FFD93D',
+  '#1A73E8',
+  '#B794F4'
+]
 
 function About() {
+  const [index, setIndex] = useState(0)
+  const [fade, setFade] = useState(true)
 
-    const roles = [ 'Roblox Developer', 'Game Developer','Luau Scripter']
-    const colors = ['#FF6B6B', '#4ECDC4', '#FFD93D', '#1A73E8', '#B794F4'] // 5 colors
-    const [index, setIndex] = useState(0)
-    const [fade, setFade] = useState(true)
-  
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setFade(false) // Start fade out
-        setTimeout(() => {
-          setIndex(prev => (prev + 1) % roles.length)
-          setFade(true) // Fade in new text
-        }, 500)
-      }, 3000)
-  
-      return () => clearInterval(interval)
-    }, [])
+  useEffect(() => {
+    let timeoutId
+
+    const intervalId = setInterval(() => {
+      // Fade out current role
+      setFade(false)
+
+      timeoutId = setTimeout(() => {
+        // Change role
+        setIndex((prevIndex) => (prevIndex + 1) % roles.length)
+
+        // Fade new role in
+        setFade(true)
+      }, 500)
+    }, 3000)
+
+    // Cleanup when component is removed
+    return () => {
+      clearInterval(intervalId)
+      clearTimeout(timeoutId)
+    }
+  }, [])
 
   return (
-    <div className='about-container'>
-      <h1>About <span className='highlight'>Us</span></h1>
-       <section class="landing">
-           <div class="image">
-          <img src={myPhoto} alt="Landing Illustration"/>
-         </div>
-      <div class="content">
-       <h1
-        id="role"
+    <section className="about-container">
+
+      {/* About Heading */}
+      <h1>
+        About <span className="highlight">Me</span>
+      </h1>
+
+      <div className="landing">
+
+        {/* Profile Image */}
+        <div className="image">
+          <img
+            src={myPhoto}
+            alt="Chandan - Roblox Developer"
+          />
+        </div>
+
+        {/* About Content */}
+        <div className="content">
+
+          {/* Animated Role */}
+          <h2
             style={{
               opacity: fade ? 1 : 0,
               color: colors[index % colors.length],
-            }} >{roles[index]}
-          </h1>
-      <h4> 
-        I'm Chandan, a passionate Roblox Developer specializing in Luau scripting and Roblox Studio. I have experience building engaging multiplayer experiences, 
-        including Math Puzzle Racing Game, Plots Tycoon, and Tower Defense, with scalable and optimized gameplay systems.
-          <br/>
-          <br/>
-        My expertise includes DataStore, RemoteEvents, RemoteFunctions, client-server architecture, matchmaking systems, UI development, and performance optimization.
-        I enjoy creating secure, interactive, and high-performance Roblox games that deliver an excellent player experience.
-          <br/>
-          <br/>
-        I completed my B.Tech in Computer Science Engineering in 2024 and have continued to strengthen my Roblox development skills through professional experience and hands-on projects. 
-        I'm a quick learner, a problem solver, and always excited to build innovative Roblox experiences and collaborate on challenging game development projects.
-      </h4>
-    </div>
+              transition: 'opacity 0.5s ease, color 0.5s ease'
+            }}
+          >
+            {roles[index]}
+          </h2>
+
+          <p>
+            Hi, I'm <strong>Chandan</strong>, a passionate Roblox Developer
+            specializing in <strong> Luau scripting</strong> and
+            <strong> Roblox Studio</strong>. I focus on building engaging,
+            scalable, and optimized Roblox experiences.
+          </p>
+
+          <p>
+            I have worked on projects including
+            <strong> Math Puzzle Racing Game</strong>,
+            <strong> Plots Tycoon</strong>,
+            <strong> Obby Game</strong>, and
+            <strong> Tower Defense</strong>, where I developed multiplayer
+            gameplay systems, game mechanics, player progression, UI systems,
+            and server-side functionality.
+          </p>
+
+          <p>
+            My Roblox development skills include
+            <strong> Luau</strong>,
+            <strong> DataStore</strong>,
+            <strong> RemoteEvents</strong>,
+            <strong> RemoteFunctions</strong>,
+            <strong> client-server architecture</strong>,
+            <strong> matchmaking systems</strong>,
+            <strong> ModuleScripts</strong>,
+            <strong> UI development</strong>,
+            <strong> MarketplaceService</strong>, and
+            <strong> performance optimization</strong>.
+          </p>
+
+          <p>
+           I also have around <strong>6 months of experience in Full-Stack Development </strong>
+           and a good understanding of <strong>Frontend Development</strong>.
+            My web development skills include
+            <strong> HTML5</strong>,
+            <strong> CSS3</strong>,
+            <strong> JavaScript</strong>, and
+            <strong> React.js</strong>. I have experience building responsive,
+            interactive, and user-friendly web interfaces.
+          </p>
+
+          <p>
+            I completed my
+            <strong> B.Tech in Computer Science Engineering in 2024</strong>.
+            I enjoy solving technical challenges, learning new technologies,
+            and creating secure, responsive, and enjoyable experiences across
+            both <strong>game development</strong> and
+            <strong> web development</strong>.
+          </p>
+
+        </div>
+
+      </div>
+
     </section>
- </div>
   )
 }
 

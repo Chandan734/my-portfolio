@@ -3,12 +3,13 @@ import React, { useState, useEffect } from 'react'
 import myPhoto from'./Image/me.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RobloxLogo from './Image/Roblox.png'
+import { Link } from 'react-router-dom'
 import { faFacebook,faInstagram,faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 
 export default function Poster() {
 
-   const roles = [ 'Roblox Developer', 'Game Developer','Luau Scripter']
+   const roles = [ 'Roblox Developer', 'Game Developer','Luau Scripter','Frontend Development' ] // 4 roles
   const colors = ['#FF6B6B', '#4ECDC4', '#FFD93D', '#1A73E8', '#B794F4'] // 5 colors
   const [index, setIndex] = useState(0)
   const [fade, setFade] = useState(true)
@@ -27,7 +28,7 @@ export default function Poster() {
 
   return (
    <div>
-    <div class="hero">
+    <div className="hero">
         <div class="hero-text">
           <h1 class="multi-color-text">Hi,
   <span class="animated-name">
@@ -42,9 +43,10 @@ export default function Poster() {
             }} >{roles[index]}
           </h2>
 
-          <h4>A passionate Roblox Developer specializing in Luau scripting and Roblox Studio. 
-            I build scalable multiplayer systems, gameplay mechanics, DataStore solutions, UI systems, and optimized client-server architectures. 
-            My goal is to create secure, engaging, and high-performance Roblox experiences that players enjoy.</h4>
+          <h4>A passionate Roblox Developer specializing in Luau scripting and Roblox Studio.
+             I build scalable multiplayer systems, gameplay mechanics, DataStore solutions, UI systems, and optimized client-server architectures.
+              I also have around 6 months of Full-Stack Development experience with good knowledge of Frontend Development, including HTML5, CSS3, JavaScript, and React.js. 
+            My goal is to create secure, engaging, and high-performance game and web experiences..</h4>
             <br/>
           <div class="buttons">
 <div className="buttons">
@@ -55,14 +57,18 @@ export default function Poster() {
     Let's Talk
   </a>
 
-  <a
-    href="https://drive.google.com/file/d/15hPILTb9WqlsiXr3EMZVfzp4NKSLGrdN/view?usp=drivesdk"
+  {/* <a
+    href="/projects"
     className="btn secondary"
     target="_blank"
     rel="noopener noreferrer"
   >
-    Download CV
-  </a>
+     View Projects
+  </a> */}
+
+  <Link to="/Project" className="btn secondary"
+    rel="noopener noreferrer">
+  View Projects </Link>
 </div>
           </div>
           <div class="social-icons">

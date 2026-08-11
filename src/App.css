@@ -310,103 +310,441 @@ transition: 'opacity 0.5s ease, color 0.5s ease'
     background: #00bfff;
   } 
   
-  .hero-img img {
-    max-width: 350px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0,191,255,0.4);
-  }
+.hero-img {
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  padding: 1px;
+
+  background: linear-gradient(
+    135deg,
+    #00bfff,
+    #0066ff,
+    #06bbd3
+  );
+
+  box-shadow:
+    0 0 25px rgba(0, 191, 255, 0.35),
+    0 0 60px rgba(0, 102, 255, 0.15);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  /* Face ko thoda better position karega */
+  object-position: center 20%;
+
+  border: 4px solid #0a0f2c;
+  display: block;
+}
 
 /* ............................................About.................................................... */
 
-.about-container{
-    width:100%;
-    padding:100px 8%;
+/* =========================================================
+                      ABOUT SECTION
+========================================================= */
+
+.about-container {
+  width: 100%;
+  padding: 90px 5%;
 }
 
-.about-container h1{
-    text-align:center;
-    font-size:48px;
-    margin-bottom:70px;
+
+/* ===================== ABOUT HEADING ===================== */
+
+.about-container > h1 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 65px;
+  line-height: 1.2;
 }
 
-.highlight{
-    color:#00bfff;
+.highlight {
+  color: #00bfff;
 }
 
-.landing{
 
-    display:grid;
-    grid-template-columns:420px 1fr;
-    gap:80px;
-    align-items:flex-start;
+/* ===================== MAIN LAYOUT ===================== */
+
+.landing {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 400px 1fr;
+
+  align-items: center;
+
+  gap: 75px;
+}
+
+
+/* =========================================================
+                        ABOUT IMAGE
+========================================================= */
+
+.image {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Profile Image */
+
+.image img {
+  width: 440px;
+  height: 540px;
+
+  max-width: 100%;
+
+  object-fit: cover;
+
+  /* Change this if face needs to move up/down */
+  object-position: center 20%;
+
+  border-radius: 50%;
+
+  border: 1px solid #00bfff;
+
+  display: block;
+
+  box-shadow:
+    0 0 15px rgba(0, 191, 255, 0.45),
+    0 0 35px rgba(0, 191, 255, 0.25),
+    0 15px 35px rgba(0, 0, 0, 0.35);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+/* Image Hover */
+
+.image img:hover {
+  transform: translateY(-6px) scale(1.02);
+
+  box-shadow:
+    0 0 22px rgba(0, 191, 255, 0.6),
+    0 0 50px rgba(0, 191, 255, 0.3),
+    0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ======================================================
+                       ABOUT CONTENT
+========================================================= */
+
+.content {
+  width: 100%;
+  max-width: 760px;
+}
+
+
+/* Animated Role */
+
+.content h2 {
+  font-size: 43px;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  margin-bottom: 25px;
+
+  min-height: 52px;
+
+  transition:
+    opacity 0.5s ease,
+    color 0.5s ease;
+}
+
+
+/* About Paragraph */
+
+.content p {
+  font-size: 17px;
+
+  line-height: 1.8;
+
+  color: #d6dbe5;
+
+  margin-bottom: 18px;
+
+  font-weight: 400;
+}
+
+
+/* Strong Text */
+
+.content p strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+                         DARK MODE
+========================================================= */
+
+body.dark .about-container {
+  color: #ffffff;
+}
+
+body.dark .content p {
+  color: #d6dbe5;
+}
+
+body.dark .content p strong {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+                         LIGHT MODE
+========================================================= */
+
+body.light .about-container {
+  color: #111111;
+}
+
+body.light .about-container > h1 {
+  color: #111111;
+}
+
+body.light .content p {
+  color: #444444;
+}
+
+body.light .content p strong {
+  color: #111111;
+}
+
+body.light .image img {
+  border-color: #007bff;
+
+  box-shadow:
+    0 0 15px rgba(0, 123, 255, 0.3),
+    0 0 35px rgba(0, 123, 255, 0.15),
+    0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+                     LARGE TABLET
+========================================================= */
+
+@media only screen and (max-width: 1100px) {
+
+  .about-container {
+    padding: 80px 4%;
+  }
+
+  .landing {
+    grid-template-columns: 340px 1fr;
+    gap: 50px;
+  }
+
+  .image img {
+    width: 320px;
+    height: 320px;
+  }
+
+  .content h2 {
+    font-size: 38px;
+  }
+
+  .content p {
+    font-size: 16px;
+  }
 
 }
 
-.image{
 
-    display:flex;
-    justify-content:center;
+/* =========================================================
+                      TABLET
+========================================================= */
 
-}
+@media only screen and (max-width: 991.98px) {
 
-.image img{
+  .about-container {
+    padding: 70px 5%;
+  }
 
-    width:100%;
-    max-width:380px;
-    border-radius:25px;
-    object-fit:cover;
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
-}
+  .about-container > h1 {
+    font-size: 42px;
+    margin-bottom: 45px;
+  }
 
-.content{
+  .landing {
+    grid-template-columns: 1fr;
 
-    max-width:700px;
+    gap: 40px;
 
-}
+    text-align: center;
+  }
 
-.content h2{
+  .image {
+    order: 1;
+  }
 
-    font-size:58px;
-    color:#42d9d0;
-    margin-bottom:25px;
+  .content {
+    order: 2;
 
-}
+    max-width: 750px;
 
-.content p{
+    margin: 0 auto;
+  }
 
-    font-size:18px;
-    line-height:1.9;
-    color:#d6d6d6;
-    margin-bottom:18px;
+  .image img {
+    width: 300px;
+    height: 300px;
+  }
 
-}
+  .content h2 {
+    font-size: 36px;
 
-@media(max-width:992px){
+    min-height: 44px;
 
-.landing{
+    margin-bottom: 22px;
+  }
 
-    grid-template-columns:1fr;
-    text-align:center;
-
-}
-
-.content{
-
-    max-width:100%;
-
-}
-
-.content h2{
-
-    font-size:42px;
+  .content p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
 
 }
 
-.image img{
 
-    max-width:320px;
+/* =========================================================
+                       MOBILE
+========================================================= */
+
+@media only screen and (max-width: 575.98px) {
+
+  .about-container {
+    padding: 55px 15px;
+  }
+
+
+  /* Heading */
+
+  .about-container > h1 {
+    font-size: 36px;
+
+    margin-bottom: 35px;
+  }
+
+
+  /* Layout */
+
+  .landing {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 35px;
+
+    padding: 0;
+
+    text-align: center;
+  }
+
+
+  /* Image */
+
+  .image {
+    width: 100%;
+  }
+
+  .image img {
+    width: 250px;
+    height: 250px;
+
+    max-width: 100%;
+
+    object-fit: cover;
+
+    object-position: center 20%;
+
+    border-radius: 50%;
+
+    border-width: 3px;
+  }
+
+
+  /* Content */
+
+  .content {
+    width: 100%;
+
+    max-width: 100%;
+  }
+
+  .content h2 {
+    font-size: 29px;
+
+    line-height: 1.25;
+
+    min-height: 38px;
+
+    margin-bottom: 20px;
+  }
+
+  .content p {
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin-bottom: 16px;
+
+    text-align: center;
+  }
 
 }
+
+
+/* =========================================================
+                     VERY SMALL MOBILE
+========================================================= */
+
+@media only screen and (max-width: 380px) {
+
+  .about-container {
+    padding: 45px 12px;
+  }
+
+  .about-container > h1 {
+    font-size: 31px;
+  }
+
+  .image img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .content h2 {
+    font-size: 26px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
 
 }
 /* ............................................Project.................................................... */
@@ -711,18 +1049,32 @@ label {
 
 /* Extra small devices (phones, less than 576px) */
 @media only screen and (max-width: 575.98px) {
-  .hero, .landing, .contact-container, .projects-container {
+ .landing, .contact-container, .projects-container {
     flex-direction: column;
     padding: 20px;
     gap: 20px;
     text-align: center;
   }
 
-  .hero-img img,
-  .image img {
-    max-width: 100%;
-    height: auto;
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 30px 15px;
+    gap: 35px;
   }
+
+  .hero-img {
+    width: 280px;
+    height: 280px;
+  }
+
+  .hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+  }
+
 
   .buttons .contactbtn {
     flex-direction: column;
@@ -781,6 +1133,15 @@ label {
 
 /* Medium devices (tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
+    .hero-img {
+    width: 320px;
+    height: 320px;
+  }
+
+  .hero-img img {
+    width: 100%;
+    height: 100%;
+  }
   .hero-text h1,
   .content h1 {
     font-size: 40px;

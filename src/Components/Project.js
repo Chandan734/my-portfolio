@@ -2,6 +2,7 @@ import React from 'react'
 import Project1 from './Image/One.jpg'
 import Project2 from './Image/Two.jpg'
 import Project3 from './Image/Three.jpg'
+import Project4 from './Image/Four.jpg'
 
 function Project() {
   return (
@@ -26,7 +27,7 @@ function Project() {
           <span>GUI</span>
         </div>
        <div class="buttons-project">
-          <a href="https://www.roblox.com/users/9243573767" class="btn secondary" target='blank' >Play Game</a>
+          <a href="https://www.roblox.com/games/140600769196450/Ultimate-Plot-Tycoon" class="btn secondary" target='blank' >Play Game</a>
           </div>
       </div>
 
@@ -46,12 +47,32 @@ function Project() {
           <span>UI System</span>
         </div>
        <div class="buttons-project">
-          <a href="https://www.roblox.com/users/9243573767" class="btn secondary" target='blank' >Play Game</a>
+          <a href="https://www.roblox.com/games/136058480327506/Tower-Defense-Game" class="btn secondary" target='blank' >Play Game</a>
           </div>
       </div>
 
 
-      {/* <!-- Project 3 --> */}
+   {/* <!-- Project 3 --> */}
+      <div class="project-card">
+        <img src={Project4} alt="Project Image" />
+        <h2>Obby Game</h2>
+        <h4>
+      A stage-based Roblox obstacle course featuring checkpoints, respawn/reset system, stage progression, 
+      Skip Stage purchases, interactive obstacles, and victory animations.
+        </h4>
+        <div class="stack">
+          <span>MarketplaceService</span>
+          <span>Lua</span>
+          <span>RemoteEvents</span>
+          <span>GUI</span>
+        </div>
+       <div class="buttons-project">
+          <a href="https://www.roblox.com/games/103630411292131/Obby-Game" class="btn secondary" target='blank' >Play Game</a>
+          </div>
+      </div>
+
+
+      {/* <!-- Project 4 --> */}
       <div class="project-card">
         <img src={Project3} alt="Project Image" />
         <h2> Math Puzzle Racing </h2>
